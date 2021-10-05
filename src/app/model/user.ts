@@ -8,5 +8,4 @@ export class User{
   profession: string;
   accountCategory: string;
   picture: string;
-
 }
