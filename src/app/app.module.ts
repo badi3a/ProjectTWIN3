@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { HeadComponent } from './head/head.component';
 import { ContentComponent } from './content/content.component';
 import { ListUserComponent } from './list-user/list-user.component';
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ListUserComponent } from './list-user/list-user.component';
     ListUserComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

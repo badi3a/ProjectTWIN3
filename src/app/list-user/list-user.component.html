@@ -1,4 +1,10 @@
+<br><br>
 <div class="container">
+  <input type="text" class="form-control" name="category"
+  placeholder="select a category"
+         [(ngModel)]="inputCategory">
+   <br>
+
   <table class="table table-hover">
     <thead>
        <tr>
@@ -13,7 +19,10 @@
        </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let user of list">
+      <tr *ngFor="let user of list"
+          [hidden]="!(user.accountCategory.includes(inputCategory))&&
+        inputCategory!=null"
+      [style.background-color]="getColor(user)">
         <td><img src="{{user.picture}}"></td>
         <td>{{user.idUser}}</td>
         <td>{{user.firstName}}</td>

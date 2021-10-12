@@ -9,6 +9,7 @@ import {User} from "../model/user";
 
 export class ListUserComponent implements OnInit {
   list: User[];
+  inputCategory: string;
   constructor() { }
 
   ngOnInit(): void {
@@ -92,5 +93,12 @@ export class ListUserComponent implements OnInit {
   delete(user:User){
     let i = this.list.indexOf(user);
     this.list.splice(i,1);
+  }
+  getColor(user:User){
+    if(user.accountCategory=='Admin')
+    return 'red';
+    else if(user.accountCategory=='Golden')
+      return 'yellow';
+    else return 'green'
   }
 }
