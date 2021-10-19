@@ -7,6 +7,7 @@ import { MainProviderComponent } from './main-provider/main-provider.component';
 import { ContentComponent } from './content/content.component';
 import {NotFoundComponent} from "./not-found/not-found.component";
 import {ListUserComponent} from "./list-user/list-user.component";
+import {FormAddUserComponent} from "./form-add-user/form-add-user.component";
 const ROUTES: Routes =
   [
     {path: 'user', component: MainUserComponent, children:[
@@ -15,6 +16,7 @@ const ROUTES: Routes =
     {path: 'provider', component: MainProviderComponent},
     {path: 'product', component: MainProductComponent},
     {path: '', component: ContentComponent},
+    {path:'subscribe', component: FormAddUserComponent},
     {path: '**',component: NotFoundComponent }
 
   ];
