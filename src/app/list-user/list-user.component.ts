@@ -91,6 +91,7 @@ export class ListUserComponent implements OnInit {
          profession:"Teacher",
          picture:"https://bootdey.com/img/Content/avatar/avatar5.png"}
      ]
+
   }
   delete(user:User){
     let i = this.list.indexOf(user);
