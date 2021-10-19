@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from "../model/user";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-list-user',
@@ -10,9 +11,10 @@ import {User} from "../model/user";
 export class ListUserComponent implements OnInit {
   list: User[];
   inputCategory: string;
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    console.log(this.route);
      this.list= [
          {
            idUser: 1,
