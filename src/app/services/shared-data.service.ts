@@ -13,7 +13,7 @@ export class SharedDataService {
         lastName: " Kunis",
         birthDate: "30-06-1999",
         accountCategory: "Admin",
-        email: "mila@kunis.com",
+        email: "test@gmail.com",
         password: "test",
         picture: "https://bootdey.com/img/Content/avatar/avatar3.png",
         profession: "Software Engineer"
