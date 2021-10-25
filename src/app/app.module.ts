@@ -12,6 +12,7 @@ import { MainProviderComponent } from './main-provider/main-provider.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormAddUserComponent } from './form-add-user/form-add-user.component';
+import { LoginComponent } from './login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,8 @@ import { FormAddUserComponent } from './form-add-user/form-add-user.component';
     MainProductComponent,
     MainProviderComponent,
     NotFoundComponent,
-    FormAddUserComponent
+    FormAddUserComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
