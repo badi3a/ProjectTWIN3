@@ -11,13 +11,15 @@ import {Router} from "@angular/router";
 export class LoginComponent implements OnInit {
   myForm: FormGroup;
   msg: string;
-  constructor(private data: SharedDataService, private router:Router,
-              private f: FormBuilder) { }
+  constructor(private data: SharedDataService, private router:Router, private f: FormBuilder) { }
   ngOnInit(): void {
-    this.myForm= this.f.group({
-      'email': ['',[Validators.required,
-        Validators.minLength(3)]],
-      'password': ['', Validators.required]
+    this.myForm= new FormGroup({
+      'email': new FormControl('',[Validators.required,
+        Validators.minLength(3)]),
+      'password': new FormControl('', Validators.required),
+      'address': new FormGroup({
+        'street number': new FormControl()
+      })
     })
   }
 
