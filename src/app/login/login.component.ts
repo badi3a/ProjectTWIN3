@@ -23,6 +23,7 @@ export class LoginComponent implements OnInit {
     })
   }
 
+
   checkUser(myForm: FormGroup){
     this.data.list.forEach(
       (user)=>
