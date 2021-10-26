@@ -14,6 +14,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormAddUserComponent } from './form-add-user/form-add-user.component';
 import { LoginComponent } from './login/login.component';
 import { ProductComponent } from './product/product.component';
+import { BestSellerComponent } from './best-seller/best-seller.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,8 @@ import { ProductComponent } from './product/product.component';
     NotFoundComponent,
     FormAddUserComponent,
     LoginComponent,
-    ProductComponent
+    ProductComponent,
+    BestSellerComponent
   ],
   imports: [
     BrowserModule,
