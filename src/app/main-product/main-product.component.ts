@@ -35,6 +35,14 @@ export class MainProductComponent implements OnInit {
         price: 100,
         nbrLike: 0,
         picture: 'assets/t shirt 1.jpg'
+      },
+      { id: '12',
+        title: 'T-Shirt 4',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi corporis',
+        quantity: 100,
+        price: 45,
+        nbrLike: 5,
+        picture: 'assets/t shirt 2.jpg'
       }
     ]
   }
