@@ -1,5 +1,7 @@
 <br>
 <a href="" >Best Seller</a>
+<h1>Add new Product</h1>
+<app-form-add-product (addEvent)="save($event)"></app-form-add-product>
 <div class="row">
     <app-product *ngFor="let currentProduct of listProduct"
                  [product]="currentProduct"

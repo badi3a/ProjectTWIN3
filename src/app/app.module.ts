@@ -15,6 +15,7 @@ import { FormAddUserComponent } from './form-add-user/form-add-user.component';
 import { LoginComponent } from './login/login.component';
 import { ProductComponent } from './product/product.component';
 import { BestSellerComponent } from './best-seller/best-seller.component';
+import { FormAddProductComponent } from './form-add-product/form-add-product.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,8 @@ import { BestSellerComponent } from './best-seller/best-seller.component';
     FormAddUserComponent,
     LoginComponent,
     ProductComponent,
-    BestSellerComponent
+    BestSellerComponent,
+    FormAddProductComponent
   ],
   imports: [
     BrowserModule,

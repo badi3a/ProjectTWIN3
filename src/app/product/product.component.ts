@@ -12,6 +12,7 @@ export class ProductComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
   }
   notifierParent(){
      this.notification.emit(this.product)

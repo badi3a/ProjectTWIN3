@@ -50,6 +50,9 @@ export class MainProductComponent implements OnInit {
   like(product: Product){
     let i = this.listProduct.indexOf(product);
     this.listProduct[i].nbrLike++
-    console.log(this.listProduct)
+    //console.log(this.listProduct)
+  }
+  save(product: Product){
+    this.listProduct.push(product);
   }
 }
