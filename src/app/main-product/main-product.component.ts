@@ -8,9 +8,11 @@ import {Product} from "../model/product";
 })
 export class MainProductComponent implements OnInit {
   listProduct: Product[];
+  showFormTemplate: boolean;
   constructor() { }
 
   ngOnInit(): void {
+    this.showFormTemplate = false;
     this.listProduct = [
       { id: '12',
         title: 'T-Shirt 1',
@@ -54,5 +56,14 @@ export class MainProductComponent implements OnInit {
   }
   save(product: Product){
     this.listProduct.push(product);
+    this.showFormTemplate = false
+  }
+  showForm(){
+    this.showFormTemplate = !this.showFormTemplate;
+    return this.showFormTemplate
+  }
+  delete(product:Product){
+    let i = this.listProduct.indexOf(product);
+    this.listProduct.splice(i,1);
   }
 }

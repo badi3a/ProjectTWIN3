@@ -16,7 +16,7 @@ export class FormAddProductComponent implements OnInit {
   }
   save(){
     this.addEvent.emit(this.product);
-
+    this.product = new Product();
   }
 
 }

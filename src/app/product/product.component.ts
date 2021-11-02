@@ -9,6 +9,7 @@ import {Product} from "../model/product";
 export class ProductComponent implements OnInit {
   @Input()product : Product;
   @Output() notification = new EventEmitter<Product>();
+  @Output() deleteNotifEvent = new EventEmitter<Product>();
   constructor() { }
 
   ngOnInit(): void {
@@ -16,6 +17,9 @@ export class ProductComponent implements OnInit {
   }
   notifierParent(){
      this.notification.emit(this.product)
+  }
+  deleteNotif(){
+    this.deleteNotifEvent.emit(this.product)
   }
 
 }
