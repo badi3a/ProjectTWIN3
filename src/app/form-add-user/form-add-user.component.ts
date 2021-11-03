@@ -10,7 +10,6 @@ import {Router} from "@angular/router";
 })
 export class FormAddUserComponent implements OnInit {
   user: User;
-
   constructor(private data:SharedDataService, private router: Router) { }
   ngOnInit(): void {
     this.user =  new User();

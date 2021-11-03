@@ -10,6 +10,7 @@ export class ProductComponent implements OnInit {
   @Input()product : Product;
   @Output() notification = new EventEmitter<Product>();
   @Output() deleteNotifEvent = new EventEmitter<Product>();
+  @Output() updateNotifEvent = new EventEmitter<Product>();
   constructor() { }
 
   ngOnInit(): void {
@@ -20,6 +21,9 @@ export class ProductComponent implements OnInit {
   }
   deleteNotif(){
     this.deleteNotifEvent.emit(this.product)
+  }
+  updateNotif(){
+    this.updateNotifEvent.emit(this.product)
   }
 
 }

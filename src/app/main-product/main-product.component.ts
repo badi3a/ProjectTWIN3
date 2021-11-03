@@ -9,10 +9,13 @@ import {Product} from "../model/product";
 export class MainProductComponent implements OnInit {
   listProduct: Product[];
   showFormTemplate: boolean;
+  buttonValue: string;
+  inputProduct: Product // the parent component will send this input to the child (formProduct)
   constructor() { }
 
   ngOnInit(): void {
     this.showFormTemplate = false;
+    this.buttonValue="add new Product";
     this.listProduct = [
       { id: '12',
         title: 'T-Shirt 1',
@@ -49,21 +52,40 @@ export class MainProductComponent implements OnInit {
     ]
   }
 
-  like(product: Product){
+  like(product: Product): void{
     let i = this.listProduct.indexOf(product);
     this.listProduct[i].nbrLike++
     //console.log(this.listProduct)
   }
-  save(product: Product){
-    this.listProduct.push(product);
+  //the method save will check if is an update case or adding a new product case
+  save(product: Product): void{
+    let i = this.listProduct.indexOf(product);
+    if(i!= -1){
+      this.listProduct[i]= product
+    }
+    else this.listProduct.push(product);
     this.showFormTemplate = false
   }
   showForm(){
-    this.showFormTemplate = !this.showFormTemplate;
-    return this.showFormTemplate
+    if (this.showFormTemplate ===false){
+      this.showFormTemplate = true
+      this.buttonValue= "go Back to the List";
+      this.inputProduct = new Product();
+    }
+    else {
+      this.buttonValue="add new Product";
+      this.showFormTemplate = false
+    }
   }
-  delete(product:Product){
+  delete(product:Product): void{
     let i = this.listProduct.indexOf(product);
     this.listProduct.splice(i,1);
+  }
+  update(product: Product): void{
+    //in order to update a product, the parent component will change the input value
+    //and send it to the child component
+    this.inputProduct = product;
+    this.showFormTemplate = true;
+
   }
 }
