@@ -1,38 +1,22 @@
 {
   "products": [
     {
-      "id": "12",
-      "title": "T-Shirt 1",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi corporis",
-      "quantity": 10,
-      "price": 15,
-      "nbrLike": 0,
-      "picture": "assets/t shirt 1.jpg"
-    },
-    {
-      "id": "13",
-      "title": "T-Shirt 2",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi corporis",
-      "quantity": 10,
-      "price": 15,
-      "nbrLike": 0,
-      "picture": "assets/t shirt 2.jpg"
-    },
-    {
-      "title": "tshirt",
+      "title": "tshirtTest",
       "description": "test",
-      "quantity": 0,
-      "price": 10,
+      "quantity": 3,
+      "price": 12,
       "picture": "https://bootdey.com/img/Content/avatar/avatar2.png",
-      "id": "WA3b-Lh"
+      "nbrLike": 0,
+      "id": 1
     },
     {
       "title": "tshirt",
       "description": "test",
       "quantity": 3,
-      "price": 3,
+      "price": 23,
       "picture": "https://bootdey.com/img/Content/avatar/avatar2.png",
-      "id": "Y_Et7ku"
+      "nbrLike": 0,
+      "id": 2
     }
   ]
 }

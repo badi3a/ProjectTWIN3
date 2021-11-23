@@ -34,18 +34,21 @@ export class MainProductComponent implements OnInit {
   save(product: Product): void{
     let i = this.listProduct.indexOf(product);
     if(i!= -1){
-      this.listProduct[i]= product
+      //update a product
+
+      this.productService.updateProductService(product).subscribe(
+        ()=>{this.listProduct[i]= product;
+          this.showFormTemplate = false}
+      )
     }
     else {
+      //add a new product
       product.nbrLike=0;
       this.showFormTemplate = false
       this.productService.addProductService(product).subscribe(
         ()=>this.listProduct.push(product)
       )
-
       }
-
-
   }
   showForm(){
     if (this.showFormTemplate ===false){
@@ -58,9 +61,12 @@ export class MainProductComponent implements OnInit {
       this.showFormTemplate = false
     }
   }
+
   delete(product:Product): void{
     let i = this.listProduct.indexOf(product);
-    this.listProduct.splice(i,1);
+    this.productService.deleteProductService(product.id).subscribe(
+      ()=>this.listProduct.splice(i,1)
+    )
   }
   update(product: Product): void{
     //in order to update a product, the parent component will change the input value
