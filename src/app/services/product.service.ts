@@ -8,10 +8,14 @@ import {Product} from "../model/product";
 export class ProductService {
   url= "http://localhost:3000/products/";
   constructor(private http: HttpClient) { }
+
   getListProductService(){
       return this.http.get<Product[]>(this.url);
   }
-  addProductService(product:Product){}
+  addProductService(product:Product){
+    return this.http.post(this.url, product);
+  }
+
   deleteProductService(id:string){}
   updateProductService(id: string, product: Product){}
   findProductByIdService(id: string){}

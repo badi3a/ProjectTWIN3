@@ -14,6 +14,7 @@ export class MainProductComponent implements OnInit {
   buttonValue: string;
   inputProduct: Product // the parent component will send this input to the child (formProduct)
   stockProduct: number;
+  msg: string;
   constructor(private calcul: CalculService, private productService: ProductService) { }
 
   ngOnInit(): void {
@@ -35,8 +36,16 @@ export class MainProductComponent implements OnInit {
     if(i!= -1){
       this.listProduct[i]= product
     }
-    else this.listProduct.push(product);
-    this.showFormTemplate = false
+    else {
+      product.nbrLike=0;
+      this.showFormTemplate = false
+      this.productService.addProductService(product).subscribe(
+        ()=>this.listProduct.push(product)
+      )
+
+      }
+
+
   }
   showForm(){
     if (this.showFormTemplate ===false){
