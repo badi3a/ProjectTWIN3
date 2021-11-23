@@ -1,5 +1,11 @@
 <br><br>
 <div class="container">
+  <button class="btn btn-outline-info" (click)="countUserByCatgory()">
+    get Bilan
+  </button>
+  <div class="alert alert-info" *ngIf="nbrUser!=null">
+    the {{this.category}} user number => {{this.nbrUser}}
+  </div>
   <input type="text" class="form-control" name="category"
   placeholder="select a category"
          [(ngModel)]="inputCategory">
@@ -21,8 +27,7 @@
     <tbody>
       <tr *ngFor="let user of list"
           [hidden]="!(user.accountCategory.includes(inputCategory))&&
-        inputCategory!=null"
-      [style.background-color]="getColor(user)">
+        inputCategory!=null">
         <td><img src="{{user.picture}}"></td>
         <td>{{user.idUser}}</td>
         <td>{{user.firstName}}</td>

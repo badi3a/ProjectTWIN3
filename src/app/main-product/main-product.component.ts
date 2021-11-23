@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Product} from "../model/product";
+import {CalculService} from "../services/calcul.service";
 
 @Component({
   selector: 'app-main-product',
@@ -11,7 +12,8 @@ export class MainProductComponent implements OnInit {
   showFormTemplate: boolean;
   buttonValue: string;
   inputProduct: Product // the parent component will send this input to the child (formProduct)
-  constructor() { }
+  stockProduct: number;
+  constructor(private calcul: CalculService) { }
 
   ngOnInit(): void {
     this.showFormTemplate = false;
@@ -87,5 +89,8 @@ export class MainProductComponent implements OnInit {
     this.inputProduct = product;
     this.showFormTemplate = true;
 
+  }
+  getBilan(){
+    this.stockProduct= this.calcul.getBilan(this.listProduct,'quantity',0);
   }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {User} from "../model/user";
 import {ActivatedRoute} from "@angular/router";
 import {SharedDataService} from "../services/shared-data.service";
+import {CalculService} from "../services/calcul.service";
 
 @Component({
   selector: 'app-list-user',
@@ -13,15 +14,18 @@ export class ListUserComponent implements OnInit {
   allUser: User[];
   list: User[];
   inputCategory: string;
-  constructor(private route: ActivatedRoute, private data: SharedDataService) { }
+  category: any;
+  nbrUser: number;
+  constructor(private route: ActivatedRoute, private data: SharedDataService,
+              private calcul: CalculService) { }
 
   ngOnInit(): void {
     this.allUser= this.data.list;
     this.route.paramMap.subscribe(
       (params)=>
       {
-        let category= params.get('category')
-        this.list= this.allUser.filter(user=>user.accountCategory === category)}
+        this.category= params.get('category')
+        this.list= this.allUser.filter(user=>user.accountCategory === this.category)}
     );
 
 
@@ -36,5 +40,8 @@ export class ListUserComponent implements OnInit {
     else if(user.accountCategory=='Golden')
       return 'yellow';
     else return 'green'
+  }
+  countUserByCatgory(){
+    this.nbrUser = this.calcul.getBilan(this.allUser, 'accountCategory', this.category)
   }
 }

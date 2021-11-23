@@ -1,6 +1,10 @@
 <br>
 &nbsp;
 <button class="btn btn-outline-primary" (click)="showForm()">{{buttonValue}}</button>
+<button class="btn btn-outline-info" (click)="getBilan()">get Bilan</button>
+<div class="alert alert-danger" *ngIf="stockProduct!=null">
+  out of stock : {{stockProduct}}
+</div>
 <div *ngIf="showFormTemplate">
   <h1>Form Product</h1>
   <app-form-add-product (addEvent)="save($event)" [product]="inputProduct"></app-form-add-product>

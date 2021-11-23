@@ -5,7 +5,7 @@ import {User} from "../model/user";
   providedIn: 'root'
 })
 export class SharedDataService {
-  list: User[]=
+  list: User[] =
     [
       {
         idUser: 1,
@@ -45,7 +45,7 @@ export class SharedDataService {
         firstName: "Ryan",
         lastName:  "Gossling",
         birthDate: "05-03-1987",
-        accountCategory: "Golden",
+        accountCategory: "Golden Account",
         email: "Ryan@nicholson.com",
         password: "test",
         picture: "https://bootdey.com/img/Content/avatar/avatar4.png",
