@@ -1,0 +1,22 @@
+{
+  "products": [
+    {
+      "id": "12",
+      "title": "T-Shirt 1",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi corporis",
+      "quantity": 10,
+      "price": 15,
+      "nbrLike": 0,
+      "picture": "assets/t shirt 1.jpg"
+    },
+    {
+      "id": "13",
+      "title": "T-Shirt 2",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi corporis",
+      "quantity": 10,
+      "price": 15,
+      "nbrLike": 0,
+      "picture": "assets/t shirt 2.jpg"
+    }
+  ]
+}

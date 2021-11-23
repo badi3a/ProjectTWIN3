@@ -16,6 +16,7 @@ import { LoginComponent } from './login/login.component';
 import { ProductComponent } from './product/product.component';
 import { BestSellerComponent } from './best-seller/best-seller.component';
 import { FormAddProductComponent } from './form-add-product/form-add-product.component';
+import {HttpClientModule} from "@angular/common/http";
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +37,8 @@ import { FormAddProductComponent } from './form-add-product/form-add-product.com
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
